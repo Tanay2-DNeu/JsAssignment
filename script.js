@@ -113,3 +113,38 @@ address: Object { city: "Delhi", pincode: 208021 }  //change only reflects in th
 
 
 // Question-4 
+
+//Create list of employee objects
+const employees = [
+  { name: "Alice", age: 25, salary: 6000, dob: "1999-05-15" },
+  { name: "Bob", age: 30, salary: 4500, dob: "1994-11-20" },
+  { name: "Charlie", age: 22, salary: 800, dob: "2002-01-10" },
+  { name: "David", age: 30, salary: 7000, dob: "1994-03-22" },
+  { name: "Eve", age: 25, salary: 900, dob: "1999-08-30" }
+];
+
+//Filter employees with salary greater than 5000
+const highSalary = employees.filter(emp => emp.salary > 5000);
+console.log("High Salary:", highSalary);
+
+//Group employees on the basis of their age
+const group = employees.reduce((acc, emp) => {
+  const age = emp.age;
+  if (!acc[age]) {
+    acc[age] = [];
+  }
+  acc[age].push(emp);
+  return acc;
+}, {});
+console.log("Grouped by Age:", group);
+
+// Fetch specific employees and give them a 5x increment
+//With Salary < 1000 AND age > 20
+const incrementedEmployees = employees
+  .filter(emp => emp.salary < 1000 && emp.age > 20)
+  .map(emp => ({
+    ...emp,
+    salary: emp.salary * 5
+  }));
+
+console.log("Employees with 5x Increment:", incrementedEmployees);
