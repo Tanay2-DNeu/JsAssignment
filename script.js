@@ -3,7 +3,7 @@
 // let amount = Number(prompt("Enter amount"));
 // let interest= Number(prompt("Enter rate of interest"));
 // let time = Number(prompt("Enter time"));
-// if(isNaN(amount) && isNaN(interest) && isNaN(time) )
+// if(!isNaN(amount) && !isNaN(interest) && !isNaN(time) )
 // {
 
 //     let simpleInterest = (amount* interest* time)/100;
@@ -107,11 +107,6 @@ Object { name: "Tanay", age: 25, address: {…} }
 address: Object { city: "Delhi", pincode: 208021 }  //change only reflects in the new copy
 */
 
-//
-
-
-
-
 // Question-4 
 
 //Create list of employee objects
@@ -146,5 +141,4 @@ const incrementedEmployees = employees
     ...emp,
     salary: emp.salary * 5
   }));
-
 console.log("Employees with 5x Increment:", incrementedEmployees);
